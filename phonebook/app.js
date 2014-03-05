@@ -6,15 +6,15 @@ app.config(['$routeProvider', '$locationProvider',  function($routeProvider, $lo
 	$locationProvider.html5Mode(true);
 	$routeProvider.
 		when('/', {
-			controller: 'listCtrl',
+			controller: 'contactsCtrl',
 			templateUrl: 'templates/list.html'
 		})
-		.when('/add',{
-			controller: 'addCtrl',
+		.when('/create',{
+			controller: 'contactsCtrl',
 			templateUrl: 'templates/add.html'	
 		})
-		.when('/edit/:id',{
-			controller: 'listCtrl',
+		.when('/update/:id',{
+			controller: 'contactsCtrl',
 			templateUrl: 'templates/edit.html'	
 		})		
 		;

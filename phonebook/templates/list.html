@@ -1,10 +1,10 @@
 
-<div ng-controller='listCtrl' class='center'>
+<div ng-controller='contactsCtrl' class='center'>
 	<br>
 	<div><input type='text' ng-model='search' class="form-control input-sm center" placeholder='search'/></div>
 	<br>
 	<table class="table table-bordered center" >	
-		<tr><td>#</td><td>name</td><td>phone</td><td><a href='add/'><i class="fa fa-plus-square"></i></a></td></tr>
+		<tr><td>#</td><td>name</td><td>phone</td><td><a href='create/'><i class="fa fa-plus-square"></i></a></td></tr>
 		<tr  ng-model='user' ng-repeat="user in users | filter: search | orderBy:'name' " row></tr>	
 	</table>
 </div>
