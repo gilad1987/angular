@@ -1,0 +1,22 @@
+<form class="form-inline center" role="form" name='phone_book_form' ng-controller='listCtrl' novalidate>
+	<div>
+	  <div class="form-group  has-feedback center" ng-class="{'has-success':isValid('name'),'has-error':isInvalid('name')}">
+	    <input type='text' ng-model='user.name' name='name' class="form-control center" placeholder='name:' required ng-minlength='3' >
+	    <span class="glyphicon  form-control-feedback"  ng-class="{'glyphicon-ok':isValid('name'),'glyphicon-remove':isInvalid('name')}"></span>
+	  </div>
+	</div>
+
+	<br>
+
+	<div>
+	  <div class="form-group  has-feedback center" ng-class="{'has-success':isValid('phone'),'has-error':isInvalid('phone')}">
+	    <input type='text' ng-model='user.phone' name='phone' class="form-control center" placeholder='phone:'  required ng-minlength='10'>
+	    <span class="glyphicon  form-control-feedback" ng-class="{'glyphicon-ok':isValid('phone'),'glyphicon-remove':isInvalid('phone')}"></span>
+	  </div>
+ 	</div>
+
+	<br>
+	<button type="button" class="btn btn-success" ng-click='edit(index)' ng-disabled='phone_book_form.phone.$invalid || phone_book_form.name.$invalid'>add new user</button>
+	<br>
+	<br>	
+</form>

@@ -11,6 +11,7 @@
 
 <script src="../scripts/jQuery.js"></script>
 <script src="../scripts/angular.js"></script>
+<script src="../scripts/angular-route.js">
 <script src="../scripts/bootstrap.js"></script>
 <script src="app.js"></script>
 <script src="services/usersService.js"></script>
@@ -31,42 +32,31 @@ body{padding:10px;}
 <br>
 
 
+<div ng-view></div>
 
 
 
 
-<form class="form-inline center" role="form" name='phone_book_form' ng-controller='addCtrl' novalidate>
-	<div>
-	  <div class="form-group  has-feedback center" ng-class="{'has-success':isValid('name'),'has-error':isInvalid('name')}">
-	    <input type='text' ng-model='user.name' name='name' class="form-control center" placeholder='name:' required ng-minlength='3' >
-	    <span class="glyphicon  form-control-feedback"  ng-class="{'glyphicon-ok':isValid('name'),'glyphicon-remove':isInvalid('name')}"></span>
-	  </div>
-	</div>
 
-	<br>
-
-	<div>
-	  <div class="form-group  has-feedback center" ng-class="{'has-success':isValid('phone'),'has-error':isInvalid('phone')}">
-	    <input type='text' ng-model='user.phone' name='phone' class="form-control center" placeholder='phone:'  required ng-minlength='10'>
-	    <span class="glyphicon  form-control-feedback" ng-class="{'glyphicon-ok':isValid('phone'),'glyphicon-remove':isInvalid('phone')}"></span>
-	  </div>
- 	</div>
-
-	<br>
-	<button type="button" class="btn btn-success" ng-click='addRow()' ng-disabled='phone_book_form.phone.$invalid || phone_book_form.name.$invalid'>add new user</button>
-	<br>
-	<br>	
-</form>
-
-
-<div ng-controller='listCtrl' class='center'>
-	<br>
-	<div><input type='text' ng-model='search' class="form-control input-sm center" placeholder='search'/></div>
-	<br>
-	<table class="table table-striped center" >	
-		<tr><td>#</td><td>name</td><td>phone</td></tr>
-		<tr  ng-model='user' ng-repeat="user in users | filter: search | orderBy:'name' " row></tr>	
-	</table>
+<!--
+<div class="navbar navbar-default" role="navigation">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">Phonebook application</a>
+      </div>
+      <div class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li class="active"><a href="/add">add contact</a></li>
+          <li><a href="/list">list</a></li>
+        </ul>
+      </div>
+    </div>
 </div>
+-->
 </body>
 </html>
