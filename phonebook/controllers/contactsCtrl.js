@@ -24,6 +24,21 @@ app.controller('contactsCtrl',function($scope,$location,$routeParams, usersServi
 		$location.path('/');
   	};
 
+  	$scope.exportToCSV = function(){
+		var csv = "name,phone\n";
+		
+		
+		for(i=0; i<usersServies.users.length; i++){
+				var name = usersServies.users[i].name;
+				var phone = usersServies.users[i].phone;
+				csv = csv + name+','+phone+'\n';
+		}
+    	
+    	var pom = document.createElement('a');
+    		pom.setAttribute('href', 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv) );
+    		pom.setAttribute('download', 'contacts.csv');
+    		pom.click();
+  	};
 
   	$scope.isInvalid = function(field){
    		 return $scope.phone_book_form[field].$invalid && $scope.phone_book_form[field].$dirty;
