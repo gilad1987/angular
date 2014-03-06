@@ -1,7 +1,9 @@
 
 
 app.controller('contactsCtrl',function($scope,$location,$routeParams, usersServies){
+	
 	$scope.users = usersServies.users;
+	$scope.canExport = $scope.users.length>0;
 	
 	if($routeParams.id){
 		$scope.user = $scope.users[$routeParams.id];
@@ -12,11 +14,13 @@ app.controller('contactsCtrl',function($scope,$location,$routeParams, usersServi
 		usersServies.users.push($scope.user);
 		$scope.user = {};
 		$scope.phone_book_form.$setPristine();
+		$scope.canExport = $scope.users.length>0;
 		$location.path('/');
 	};
 	
   	$scope.delete = function(index){
 		$scope.users.splice(index, 1);
+		$scope.canExport = $scope.users.length>0;
   	};
 
   	$scope.update = function(index){
