@@ -1,6 +1,6 @@
 
 
-var app = angular.module('phoneBook',['ngRoute', 'ngAnimate']);
+var app = angular.module('phoneBook',['ngRoute']);
 
 app.config(['$routeProvider', '$locationProvider',  function($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
@@ -16,6 +16,8 @@ app.config(['$routeProvider', '$locationProvider',  function($routeProvider, $lo
 		.when('/update/:id',{
 			controller: 'contactsCtrl',
 			templateUrl: 'templates/edit.html'	
-		})		
-		;
+		}).otherwise({
+     		 redirectTo: "/"
+	    });
 }]);
+
