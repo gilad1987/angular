@@ -1,7 +1,8 @@
+
 app.directive('activeLink', ['$location', function(location) {
     return {
         restrict: 'A',
-        link: function(scope, element, attrs, controller) {
+        link: function(scope, element, attrs) {
             var clazz = attrs.activeLink;
             var path = attrs.href;
 
@@ -9,8 +10,7 @@ app.directive('activeLink', ['$location', function(location) {
       
             scope.$watch('location.path()', function(newPath) {
             	
-            	newPath = newPath.substring(1); 
-
+                newPath = newPath.substring(1); 
                 if (path === newPath) {
                     element.parent().addClass(clazz);
                 } else {
@@ -20,5 +20,4 @@ app.directive('activeLink', ['$location', function(location) {
         }
 
     };
-
 }]);
