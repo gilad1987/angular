@@ -15,7 +15,7 @@ app.controller('contactsCtrl',function($scope,$location,$routeParams, usersServi
 		$scope.user = {};
 		$scope.phone_book_form.$setPristine();
 		$scope.canExport = $scope.users.length>0;
-		$location.path('/');
+		$location.path('/list');
 	};
 	
   	$scope.delete = function(index){
@@ -25,7 +25,7 @@ app.controller('contactsCtrl',function($scope,$location,$routeParams, usersServi
 
   	$scope.update = function(index){
 		$scope.users[index] = $scope.user;
-		$location.path('/');
+		$location.path('/list');
   	};
 
   	$scope.exportToCSV = function(){
