@@ -1,8 +1,13 @@
 <!doctype html>
 <html ng-app="phoneBook">
-<head>
+<head prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb# business: http://ogp.me/ns/business#">
 <title>Phonebook</title>
 <meta name="viewport" content="width=device-width, user-scalable=no">
+
+<meta property="og:type"  content="article" /> 
+<meta property="og:url"   content="http://giladt.com/angular/phonebook/" /> 
+<meta property="og:title" content="Phone book Application" /> 
+<meta property="og:image" content="" /> 
 
 <base href="/angular/phonebook/"/>
 
@@ -27,6 +32,7 @@ body{padding:40px 10px;}
 .center.bg-success {padding: 15px; margin: 0 auto 10px; }
 .form-inline .form-control.center{width:100%; max-width:500px; margin:0 auto}
 p{padding: 17px;}
+.text-center{text-align:center;}
 </style>
 </head>
 <body>

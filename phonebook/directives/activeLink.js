@@ -3,7 +3,7 @@ app.directive('activeLink', ['$location', function(location) {
     return {
         restrict: 'A',
         link: function(scope, element, attrs) {
-            var clazz = attrs.activeLink;
+            var _class = attrs.activeLink;
             var path = attrs.href;
 
             scope.location = location;
@@ -12,9 +12,9 @@ app.directive('activeLink', ['$location', function(location) {
             	
                 newPath = newPath.substring(1); 
                 if (path === newPath) {
-                    element.parent().addClass(clazz);
+                    element.parent().addClass(_class);
                 } else {
-                    element.parent().removeClass(clazz);
+                    element.parent().removeClass(_class);
                 }
             });
         }

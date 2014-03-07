@@ -3,7 +3,9 @@
 var app = angular.module('phoneBook',['ngRoute']);
 
 app.config(['$routeProvider', '$locationProvider',  function($routeProvider, $locationProvider) {
+	
 	$locationProvider.html5Mode(true);
+
 	$routeProvider.
 		when('/list', {
 			controller: 'contactsCtrl',
