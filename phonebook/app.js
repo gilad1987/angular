@@ -5,7 +5,7 @@ var app = angular.module('phoneBook',['ngRoute']);
 app.config(['$routeProvider', '$locationProvider',  function($routeProvider, $locationProvider) {
 	$locationProvider.html5Mode(true);
 	$routeProvider.
-		when('/', {
+		when('/list', {
 			controller: 'contactsCtrl',
 			templateUrl: 'templates/list.html'
 		})
@@ -17,7 +17,7 @@ app.config(['$routeProvider', '$locationProvider',  function($routeProvider, $lo
 			controller: 'contactsCtrl',
 			templateUrl: 'templates/edit.html'	
 		}).otherwise({
-     		 redirectTo: "/"
+     		 redirectTo: "/list"
 	    });
 }]);
 
