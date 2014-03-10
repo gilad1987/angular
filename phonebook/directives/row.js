@@ -6,7 +6,7 @@ app.directive('row', function(){
 		template:
 		'<tr>'+
 			'<td>{{$index+1}}</td><td>{{user.name}}</td>'+
-			'<td>{{user.phone}}</td>'+
+			'<td><a href="tel:{{user.phone}}">{{user.phone}}</a></td>'+
             '<td class=\'text-center\'><i class="fa fa-times" ng-click="delete($index)"></i></td>'+
             '<td class=\'text-center\'><a href="update/{{$index}}">  <i class="fa fa-pencil-square-o"></i></a></td>'+
 		'</tr>',

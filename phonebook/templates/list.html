@@ -1,12 +1,12 @@
 
 <div ng-controller='contactsCtrl' class='center'>
-	<button type="button" id='export-btn' class="btn btn-success" ng-show='canExport' ng-click='exportToCSV()' >export to CSV</button>
+	<button type="button" id='export-btn' class="btn btn-success" ng-show='canExport' ng-click='exportToCSV()' >ייצא לקובץ CSV</button>
 	<br>
 	<br>
-	<div><input type='text' ng-model='search' class="form-control input-sm center" placeholder='search'/></div>
+	<div><input type='text' ng-model='search' class="form-control input-sm center" placeholder='חיפוש :'/></div>
 	<br>
 	<table class="table table-bordered center" >	
-		<tr><td>#</td><td>name</td><td>phone</td><td colspan="2" class='text-center'></td></tr>
+		<tr><td>#</td><td>שם</td><td>טלפון</td><td colspan="2" class='text-center'></td></tr>
 		<tr  ng-model='user' ng-repeat="user in users | filter: search | orderBy:'name' " row></tr>	
 	</table>
 </div>

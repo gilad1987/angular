@@ -14,6 +14,7 @@
 
 
 <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+<link rel="stylesheet" type="text/css" href="../css/bootstrap.rtl.css">
 <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
 <link rel="stylesheet" type="text/css" href="css/style.css">
 
@@ -43,22 +44,22 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Phone book</a>
+      <a class="navbar-brand" href="#"> <i class="fa fa-phone"></i> Phone book </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="navbar-collapse collapse" id="bs-example-navbar-collapse-8" style="height: 1px;">
       <ul class="nav navbar-nav">
-        <li><a href="list" active-link="active">All contacts</a></li>
-        <li><a href="create" active-link="active">Add contact</a></li>
+        <li><a href="list" active-link="active">אנשי קשר</a></li>
+        <li><a href="create" active-link="active">הוסף איש קשר</a></li>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div>
 </nav>
 
 <br>
-<div class='content '>
-<div ng-view class="flip page"></div>
+<div class='content'>
+  <div ng-view class="flip page"></div>
 </div>
 </html>
 </body>
