@@ -1,0 +1,19 @@
+body{padding:40px 10px;}
+.has-feedback .form-control-feedback{top:0;}
+.center{width:100%; max-width:500px; margin:0 auto}
+.center.bg-success {padding: 15px; margin: 0 auto 10px; }
+.form-inline .form-control.center{width:100%; max-width:500px; margin:0 auto}
+p{padding: 17px;}
+.text-center{text-align:center;}
+
+
+/* -moz, -o- prefexies are skipped */
+.content { -webkit-transition: -webkit-transform 1s;-webkit-perspective: 600px;}
+.content .flip {-webkit-transform-style: preserve-3d;-webkit-backface-visibility: hidden;-webkit-transition: all 1s ease-in-out;}
+.content .flip.ng-enter { -webkit-transform: rotateY(-180deg);}
+.content .flip.ng-enter-active {-webkit-transform: rotateY(0deg);}
+.content .flip.ng-leave { -webkit-transform: rotateY(0deg);}
+.content .flip.ng-leave-active {-webkit-transform: rotateY(180deg);}
+.flip { left: 0; top: 0; width: 100%; height: 100%;}
+.content {position: relative;overflow: hidden;min-height: 400px;padding: 0;margin-bottom: 0;}
+.page{position:absolute;}

@@ -1,6 +1,6 @@
 
 
-var app = angular.module('phoneBook',['ngRoute','ngAnimate']);
+var app = angular.module('phoneBook',['ngRoute','ngAnimate','ngCookies']);
 
 app.config(['$routeProvider', '$locationProvider',  function($routeProvider, $locationProvider) {
 	

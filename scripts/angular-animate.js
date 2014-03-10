@@ -1153,6 +1153,7 @@ angular.module('ngAnimate', ['ng'])
           //we want all the styles defined before and after
           forEach(element, function(element) {
             if (element.nodeType == ELEMENT_NODE) {
+
               var elementStyles = $window.getComputedStyle(element) || {};
 
               transitionDurationStyle = elementStyles[TRANSITION_PROP + DURATION_KEY];

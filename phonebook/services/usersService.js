@@ -1,7 +1,8 @@
 
 
-app.factory('usersServies', function(){
-	var users = [{name:'gilad',phone:'0544889988'}];
+app.factory('usersServies', function($cookies, $cookieStore){
+	var users = $cookieStore.get('users').users || [];
+
 	return {
 		users:users
 	}
