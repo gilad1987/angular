@@ -7,6 +7,7 @@ app.controller('contactsCtrl',function($scope,$location,$routeParams,$cookieStor
 	
 	if($routeParams.id){
 		$scope.user = $scope.users[$routeParams.id];
+
 	}
 	
 	$scope.create = function(){
@@ -41,10 +42,10 @@ app.controller('contactsCtrl',function($scope,$location,$routeParams,$cookieStor
 				csv = csv + name+','+phone+'\n';
 		}
     	
-    	var pom = document.createElement('a');
-    		pom.setAttribute('href', 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv) );
-    		pom.setAttribute('download', 'contacts.csv');
-    		pom.click();
+    	var dom = document.createElement('a');
+    		dom.setAttribute('href', 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv) );
+    		dom.setAttribute('download', 'contacts.csv');
+    		dom.click();
   	};
 
   	$scope.isInvalid = function(field){
