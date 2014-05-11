@@ -7,3 +7,4 @@ app.factory('usersServies', function($cookies, $cookieStore){
 		users:users
 	}
 });
+

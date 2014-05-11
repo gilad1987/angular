@@ -19,22 +19,24 @@ app.controller('contactsCtrl',function($scope,$location,$routeParams,$cookieStor
 		$scope.canExport = $scope.users.length>0;
 		$location.path('/list');
 	};
-	
-  	$scope.delete = function(index){
-		$scope.users.splice(index, 1);
-		$cookieStore.put('users',usersServies);
-		$scope.canExport = $scope.users.length>0;
-  	};
-
+  	
   	$scope.update = function(index){
 		$scope.users[index] = $scope.user;
 		$cookieStore.put('users',usersServies);
 		$location.path('/list');
   	};
 
+  	$scope.delete = function(index){
+		$scope.users.splice(index, 1);
+		$cookieStore.put('users',usersServies);
+		$scope.canExport = $scope.users.length>0;
+  	};
+
   	$scope.exportToCSV = function(){
-		var csv = "name,phone\n";
-		
+  		var dom,
+  			csv;
+
+		csv = "name,phone\n";
 		
 		for(i=0; i<usersServies.users.length; i++){
 				var name = usersServies.users[i].name;
@@ -42,10 +44,10 @@ app.controller('contactsCtrl',function($scope,$location,$routeParams,$cookieStor
 				csv = csv + name+','+phone+'\n';
 		}
     	
-    	var dom = document.createElement('a');
-    		dom.setAttribute('href', 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv) );
-    		dom.setAttribute('download', 'contacts.csv');
-    		dom.click();
+    	dom = document.createElement('a');
+    	dom.setAttribute('href', 'data:application/csv;charset=utf-8,' + encodeURIComponent(csv) );
+    	dom.setAttribute('download', 'contacts.csv');
+    	dom.click();
   	};
 
   	$scope.isInvalid = function(field){
